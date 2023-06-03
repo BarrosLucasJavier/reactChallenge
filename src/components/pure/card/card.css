@@ -34,3 +34,21 @@
     left: 50px;
     text-transform: capitalize;
 }
+.abilityContainer{
+    width: 135px;
+    position: absolute;
+    top: 228px;
+    left: 55px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    font-weight: bold;
+}
+.ability{
+    margin-right: 7px;
+    text-shadow: 2px 0 #000000, -2px 0 #000000, 0 2px #000000, 0 -2px #000000,
+    1px 1px #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000;;
+    color:#D7B01F;
+}

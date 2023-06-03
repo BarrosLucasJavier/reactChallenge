@@ -13,34 +13,29 @@ export const PokemonProvider = ({ children }) =>{
         loadPokemon(page)
     },[page]);
 
-    const loadPokemon = async (page) =>{
+    const loadPokemon = async (pag) =>{
         let tempor = [];
         
-        for (let i = page; i <= (page +10); i++) {
-            await Axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)
-            .then(response =>{
+        for (let i = pag; i <= (pag +10); i++) {
+            const response = await Axios.get(`https://pokeapi.co/api/v2/pokemon/${i}`)
+                let abilityTemp = [];
+                for (let x = 0; x < response.data.abilities.length; x++) {
+                    abilityTemp.push(response.data.abilities[x].ability.name)
+                }
                 tempor.push({
                     name: response.data.name,
                     weight: response.data.weight,
                     image: response.data.sprites.other.dream_world.front_default,
-                    abilities: response.data.abilities
-                    
+                    abilities: abilityTemp,
                 })
-            })
-            .catch(error =>{
-                console.log("Error al cargar datos:", error);
-            })
-            .finally(()=>{
-                console.log("Proceso finalizado");
-            }) 
         }
         setPokemons(tempor)
     }
-    const cambioPage = (page) =>{
-        if (page <= 1) {
+    const cambioPage = (pag) =>{
+        if (pag <= 1) {
             setPage(1);
         }else{
-            setPage(page);
+            setPage(pag);
         }
     }
     return (

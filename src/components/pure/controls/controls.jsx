@@ -7,9 +7,9 @@ const Controls = () => {
 
     return (
         <div className='controls'>
-            <button onClick={()=>cambioPage(page - 10)} >Anterior</button>
-            <span>Pagina:</span>
-            <button onClick={() => cambioPage(page + 10)}>Siguiente</button>
+            <button onClick={()=>cambioPage(page - 11)} >Anterior</button>
+            <span className='amount'>{page} a {page + 10}</span>
+            <button onClick={() => cambioPage(page + 11)}>Siguiente</button>
         </div>
     );
 }

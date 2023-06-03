@@ -1,7 +1,7 @@
 import './card.css'
 
 const PokemonCard = ({ name, image, weight, abilities }) => {
-   /*  console.log(abilities); */
+    
     return (
         <div className='container'>
             <div className='img'>
@@ -9,6 +9,11 @@ const PokemonCard = ({ name, image, weight, abilities }) => {
             </div>
             <div>
                 <h3 className='name'>{name} - {weight}</h3>
+                <div className='abilityContainer'>
+                    {abilities.map((ability, index) =>{
+                        return <span className='ability' key={index}>{ability}</span>
+                    })}
+                </div>
             </div>
         </div>
     );
