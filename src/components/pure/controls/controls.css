@@ -1,0 +1,28 @@
+.controls{
+    width: 350px;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    margin: auto;
+    border-radius: 5px;
+    background-color: rgba(105, 99, 99, 0.396);
+}
+.controls button{
+    transition: all 1s;
+    padding: 5px 15px;
+    border-radius: 17px;
+    width: 150px;
+    background-color: #FFCC01;
+    border: 5px solid #2775BB;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.687));
+    font-family: Gill;
+    font-size: 1.5rem;
+}
+.controls button:hover{
+    background-image: url('../../../assets/pokeball.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.687));
+}
